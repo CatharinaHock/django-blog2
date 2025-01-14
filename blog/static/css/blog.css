@@ -47,8 +47,10 @@ h4 {
 .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 22pt;
     margin-right: 20px;
+    text-decoration: none;
+    font-family: Montserrat Underline;
 }
 
 .post {
