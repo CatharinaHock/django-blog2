@@ -17,6 +17,16 @@
                         {% include './icons/file-earmark-plus.svg' %}
                     </a>
                     <a href="{% url 'post_draft_list' %}" class="top-menu">Drafts</span></a>
+                    <p class="top-menu">Hello {{ user.username }} 
+                        <small>
+                            <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">{% include './icons/box-arrow-right.svg' %}</button>
+                            </form>
+                        </small>
+                    </p>
+                {% else %}
+                <a href="{% url 'login' %}" class="top-menu">{% include './icons/box-arrow-in-right.svg' %}</a>
                 {% endif %}  
               <h1><a href="/">Writer's Blob</a></h1>
               
