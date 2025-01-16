@@ -79,7 +79,19 @@ h4 {
     background-color:  #00916b;
 }
 
-#about{
+.logout-btn,
+.logout-btn:active,
+.logout-btn:visited,
+.logout-btn:hover{
+    background-color:#00916b;
+    border: none;
+    color:#FFFFFF;
+}
+/* #about{
     text-decoration: none;
     color:#ffffff;
+}*/
+
+.comment {
+    margin: 20px 0px 20px 20px;
 }
