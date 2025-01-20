@@ -1,17 +1,23 @@
 .page-header {
-    background-color:  #00916b;
+    background-color:  #003c91;
     margin-top: 0;
-    margin-bottom: 0;
-    padding: 20px 20px 20px 40px;
-}
+    margin-bottom: 40px;
+    padding: 100px 20px 100px 40px;}
 
+.backblob{
+    background-image: url("../images/Backblob_edit.png");
+    background-size: cover;
+    background-position: 50% 90%;/*center bottom;*/
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+}
 
 .page-header h1,
 .page-header h1 a,
 .page-header h1 a:visited,
 .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 50pt;
     text-decoration: none;
 }
 
@@ -105,9 +111,9 @@ h4 {
     font-size: 20pt;
     font-family: Montserrat Underline;
 }
-.navbar{
+/*.navbar{
     margin-bottom: 40px;
-}
+}*/
 .center{
     text-align: center;
 }

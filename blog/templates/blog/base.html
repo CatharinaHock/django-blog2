@@ -15,30 +15,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header class="page-header">
-          <div class="container">
-            <!--<a class="top-menu" href="/about" >About</a>
-                {% if user.is_authenticated %}
-                    <a href="{% url 'post_new' %}" class="top-menu">
-                        {% include './icons/file-earmark-plus.svg' %}
-                    </a>
-                    <a href="{% url 'post_draft_list' %}" class="top-menu">Drafts</span></a>
-                    <p class="top-menu">Hello {{ user.username }} 
-                        <small>
-                            <form method="post" action="{% url 'logout' %}">
-                            {% csrf_token %}
-                            <button type="submit" class="logout-btn">{% include './icons/box-arrow-right.svg' %}</button>
-                            </form>
-                        </small>
-                    </p>
-                {% else %}
-                <a href="{% url 'login' %}" class="top-menu">{% include './icons/box-arrow-in-right.svg' %}</a>
-                {% endif %}  -->
-              <h1 class="center"><a href="/">Writer's Blob</a></h1>
-              
-          </div>
-          
-        </header>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Writer's Blob</a>
@@ -80,6 +56,31 @@
               
             </div>
           </nav>
+        <header class="page-header backblob">
+          <div class="container">
+            <!--<a class="top-menu" href="/about" >About</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'post_new' %}" class="top-menu">
+                        {% include './icons/file-earmark-plus.svg' %}
+                    </a>
+                    <a href="{% url 'post_draft_list' %}" class="top-menu">Drafts</span></a>
+                    <p class="top-menu">Hello {{ user.username }} 
+                        <small>
+                            <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="logout-btn">{% include './icons/box-arrow-right.svg' %}</button>
+                            </form>
+                        </small>
+                    </p>
+                {% else %}
+                <a href="{% url 'login' %}" class="top-menu">{% include './icons/box-arrow-in-right.svg' %}</a>
+                {% endif %}  -->
+              <h1 class="center"><a href="/">Writer's Blob</a></h1>
+              
+          </div>
+          
+        </header>
+        
         <main class="container">
             <div class="row">
                 <div class="col">
