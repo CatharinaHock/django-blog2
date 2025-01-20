@@ -1,5 +1,5 @@
 .page-header {
-    background-color:  #003c91;
+    background-color:  #00916b;
     margin-top: 0;
     margin-bottom: 40px;
     padding: 100px 20px 100px 40px;}
@@ -73,6 +73,7 @@ h4 {
     float: right;
 }
 
+/*
 .btn-secondary,
 .btn-secondary:visited {
     color:  #00916b;
@@ -83,7 +84,7 @@ h4 {
 .btn-secondary:hover {
     color: #FFFFFF;
     background-color:  #00916b;
-}
+}*/
 
 .logout-btn,
 .logout-btn:active,
@@ -116,4 +117,15 @@ h4 {
 }*/
 .center{
     text-align: center;
+}
+
+.thumbnail-div{
+    text-align: right;
+}
+.thumbnail{
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    
 }
