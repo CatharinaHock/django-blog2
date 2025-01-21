@@ -16,6 +16,7 @@ a{
     /*background-attachment: fixed;*/
 }
 
+
 .page-header h1,
 .page-header h1 a,
 .page-header h1 a:visited,
@@ -51,22 +52,30 @@ h4 {
 .post-form input {
     width: 100%;
 }
-/*
-.top-menu,
-.top-menu:hover,
-.top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 22pt;
-    margin-right: 20px;
-    text-decoration: none;
-    font-family: Montserrat Underline;
+
+.post-image-blurry{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /*filter:blur(10px);*/
+    margin-bottom: 40px;
+    height: 250px;
+
 }
 
-.post {
-    margin-bottom: 70px;
+.post-image-sharp{
+    height: 300px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top:-250px;
+    filter:blur(0);
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgb(128, 126, 126);
+    margin-bottom: 50px;
 }
-*/
+
 
 .post {
     padding-left: 10px;
@@ -131,6 +140,11 @@ h4 {
 
 .center{
     text-align: center;
+}
+
+.post-title{
+    text-align: center;
+    margin-bottom: 0;
 }
 
 .thumbnail-div{

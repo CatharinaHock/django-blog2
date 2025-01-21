@@ -1,22 +1,30 @@
 {% extends "blog/base.html" %}
 {% block content %}
-    {% for post in posts %}
-    <div class="row justify-content-center post-row">
-        <div class="col-2 thumbnail-div", style="background-image: url({{post.main_img.url}}); filter: hue-rotate({{post.color_rotation}}deg);">
-            <!--<img src="{{ post.Main_Img.url}}" class="thumbnail"> url(../static/images/faces_edit.png)-->
+    <header class="page-header backblob">
+        <div class="container">
+            <h1 class="center"><a href="/">Writer's Blob</a></h1>              
         </div>
-        <div class="col-6">
-            <article class="post">
-                <time class="date">
-                    {% include './icons/calendar3.svg' %}
-                    {{ post.published_date|date }}
-                </time>
-                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                <a href="{% url 'post_detail' pk=post.pk %}" class="comment-number">{% include './icons/chat-dots-fill.svg' %} {{ post.approved_comments.count }}</a>
-                <p>{{ post.brief_description|linebreaksbr }}</p>
-                <!-- Wieso nicht post.approved_comments().count ?-->
-            </article>
+    </header>
+
+    <main class="container">
+        {% for post in posts %}
+        <div class="row justify-content-center post-row">
+            <div class="col-2 thumbnail-div", style="background-image: url({{post.main_img.url}}); filter: hue-rotate({{post.color_rotation}}deg);">
+                <!--<img src="{{ post.Main_Img.url}}" class="thumbnail"> url(../static/images/faces_edit.png)-->
+            </div>
+            <div class="col-6">
+                <article class="post">
+                    <time class="date">
+                        {% include './icons/calendar3.svg' %}
+                        {{ post.published_date|date }}
+                    </time>
+                    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                    <a href="{% url 'post_detail' pk=post.pk %}" class="comment-number">{% include './icons/chat-dots-fill.svg' %} {{ post.approved_comments.count }}</a>
+                    <p>{{ post.brief_description|linebreaksbr }}</p>
+                    <!-- Wieso nicht post.approved_comments().count ?-->
+                </article>
+            </div>
         </div>
-    </div>
-    {% endfor %}
+        {% endfor %}
+    </main>
 {% endblock %}
