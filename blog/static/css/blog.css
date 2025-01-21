@@ -4,6 +4,10 @@
     margin-bottom: 40px;
     padding: 100px 20px 100px 40px;}
 
+a{
+    color:#00916b;
+}
+
 .backblob{
     background-image: url("../images/Backblob_edit.png");
     background-size: cover;
@@ -58,9 +62,14 @@ h4 {
     text-decoration: none;
     font-family: Montserrat Underline;
 }
-*/
+
 .post {
     margin-bottom: 70px;
+}
+*/
+
+.post {
+    padding-left: 10px;
 }
 
 .post h2 a,
@@ -69,8 +78,15 @@ h4 {
 }
 
 .post > .date,
+.post > .comment-number,
 .post > .actions {
     float: right;
+}
+.comment-number{
+    text-decoration: none;
+}
+.date{
+    padding:10px;
 }
 
 /*
@@ -112,20 +128,28 @@ h4 {
     font-size: 20pt;
     font-family: Montserrat Underline;
 }
-/*.navbar{
-    margin-bottom: 40px;
-}*/
+
 .center{
     text-align: center;
 }
 
 .thumbnail-div{
-    text-align: right;
-}
-.thumbnail{
-    border: 1px solid #ffffff;
-    border-radius: 4px;
-    padding: 5px;
+    /*text-align: right;*/
     width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgb(128, 126, 126);
     
+    /*50px 20px;*//*75px 20px 20px 75px;*/
+}
+
+.post-row{
+    margin-bottom: 50px;
+}
+
+.redborder{
+    border: 1px solid red;
 }

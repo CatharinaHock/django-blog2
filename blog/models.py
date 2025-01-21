@@ -7,9 +7,11 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
+    brief_description = models.TextField(max_length= 1000, default="Unbeschreiblich.")
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    Main_Img = models.ImageField(upload_to='images/', default="images/default.png")
+    main_img = models.ImageField(upload_to='images/', default="images/default.png")
+    color_rotation = models.IntegerField(default=0)
 
     def publish(self):
         self.published_date = timezone.now()
