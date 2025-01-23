@@ -1,10 +1,5 @@
-{% extends "blog/base.html" %}
+{% extends "blog/base_with_banner.html" %}
 {% block content %}
-    <header class="page-header backblob">
-        <div class="container">
-            <h1 class="center"><a href="/">Writer's Blob</a></h1>              
-        </div>
-    </header>
 
     <main class="container">
         {% for post in posts %}
@@ -14,7 +9,7 @@
             </div>
             <div class="col-6">
                 <article class="post">
-                    <time class="date">
+                    <time class="date-right">
                         {% include './icons/calendar3.svg' %}
                         {{ post.published_date|date }}
                     </time>

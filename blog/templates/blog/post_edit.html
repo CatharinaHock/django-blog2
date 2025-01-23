@@ -1,17 +1,11 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/base_with_banner.html' %}
 
 {% block content %}
-<header class="page-header backblob">
-    <div class="container">
-        <h1 class="center"><a href="/">Writer's Blob</a></h1>              
-    </div>
-</header>
-
 <main class="container">
     <div class="row">
         <div class="col">
-            <h2>New post</h2>
-            <form method="POST" class="post-form">{% csrf_token %}
+            <h1>New post</h1>
+            <form method="POST" class="post-form" style="background-color: lightgrey;">{% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit" class="save btn btn-secondary">Save</button>
             </form>
