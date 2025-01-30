@@ -2,6 +2,15 @@
 {% block content %}
 
     <main class="container">
+        <div class="row justify-content-center post-row">
+            <div class="col-8">
+                <h2>Results for  <a href="{% url 'post_list_filtered' pk=tag.pk %}" class="big-tag" style="background-color: {{tag.background_color}}; color:{{tag.text_color}};">{{tag.name}}</a> :</h2>
+                {% if not posts %}
+                    Sorry, there are no posts with this tag yet.
+                {% endif %}
+            </div>
+        </div>
+        
         {% for post in posts %}
         <div class="row justify-content-center post-row">
             <div class="col-2 thumbnail-div", style="background-image: url({{post.main_img.url}}); filter: hue-rotate({{post.color_rotation}}deg);">
