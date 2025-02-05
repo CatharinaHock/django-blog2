@@ -237,22 +237,24 @@ div .tagbox{
 /* collapsible box */
 
 .collapsible {
-    background-color: #00916b;
+    background-color: #adadad;
     color: white;
     cursor: pointer;
-    padding: 8px;
+    padding: 5px;
+    padding-left: 20px;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    font-size: 14pt;
     border-radius: 15px;
-    transition: border-radius 0.2s ease-out;
+    transition: border-radius 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
     font-family: "Ubuntu";
   }
   
-.active, .collapsible:hover {
-    background-color: #00563f;
+.active{
+    background-color: #4e4e4e;
 
 }
 
@@ -289,18 +291,31 @@ div .tagbox{
     margin-bottom: 20px;
 }
 
+.content-warning-box p{
+    padding: 10px;
+    margin-bottom: 0px;
+}
+.authors-comment-box p{
+    padding: 10px;
+}
+
 .authors-comment-box{
     max-width: 100%;
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 40px;
     margin-left: auto;
     margin-right: auto;
 }
-.authors-comment{
+/*.authors-comment-box.content{
     background-color: #303030;
     color: #ffffff;
-}
+}*/
 
-.authors-comment p{
+.authors-comment-box button{
+    background-image: url("../../media/images/default.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 80%;
     padding: 10px;
+    padding-left: 20px;
 }
