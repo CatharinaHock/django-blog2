@@ -62,6 +62,8 @@ h2 a:active{
     margin-top: 0;
     margin-bottom: 40px;
     padding: 100px 20px 100px 40px;
+    /*mask-image: url("../images/Mask1.png");
+    mask-repeat: no-repeat;*/
     background-image: url("../images/Backblob_edit.png");
     background-size: cover;
     background-position: 50% 90%;/*center bottom;*/
@@ -232,6 +234,73 @@ div .tagbox{
 }
 
 
-.redborder{
-    border: 1px solid red;
+/* collapsible box */
+
+.collapsible {
+    background-color: #00916b;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border-radius: 15px;
+    transition: border-radius 0.2s ease-out;
+    font-family: "Ubuntu";
+  }
+  
+.active, .collapsible:hover {
+    background-color: #00563f;
+
+}
+
+.active{
+    border-radius: 15px 15px 0 0;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+
+}
+
+.collapsible.active:after {
+    content: "\2212";
+
+}
+
+
+.content {
+    padding: 0 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    border-radius: 0 0 15px 15px;
+    font-family: "Ubuntu";
+}
+
+.content-warning-box{
+    margin-bottom: 20px;
+}
+
+.authors-comment-box{
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.authors-comment{
+    background-color: #303030;
+    color: #ffffff;
+}
+
+.authors-comment p{
+    padding: 10px;
 }

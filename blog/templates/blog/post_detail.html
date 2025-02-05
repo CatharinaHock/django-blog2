@@ -33,7 +33,7 @@
                     {% endif %}
         
                 </aside>
-                
+                {% autoescape off %}
                 <h1 class="post-title">{{ post.title }}</h1>
                 {% if post.published_date %}
                     <time class="date-right">
@@ -46,7 +46,26 @@
                     <a href="#" class="tag" style="background-color: {{tag.background_color}}; color:{{tag.text_color}};">{{tag.name}}</a>
                 {% endfor %}
                 </div>
-                <p>{{ post.text|linebreaksbr }}</p>
+
+                {% if post.content_warning %}
+                <div class="content-warning-box">
+                    <button type="button" class="collapsible">Content warning</button>
+                    <div class="content">
+                    <p style="margin-top: 5px;margin-bottom:5px;">{{post.content_warning|linebreaksbr|safe}}</p>
+                    </div>
+                </div>
+                {% endif %}
+                <p>{{ post.text|linebreaksbr|safe }}</p>
+
+                {% if post.authors_comment %}
+                <div class="authors-comment-box">
+                    <button type="button" class="collapsible">Author's comment</button>
+                    <div class="content authors-comment">
+                    <p>{{post.authors_comment|linebreaksbr|safe}}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% endautoescape %}
             </article>
             
             <hr>
@@ -87,4 +106,7 @@
         </div>
     </div>
 </main>
+
+    
+
 {% endblock %}
