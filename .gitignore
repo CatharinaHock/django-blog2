@@ -32,5 +32,4 @@ $RECYCLE.BIN/
 *.code-workspace
 
 #media
-blog/media/
-blog/static/images
+
