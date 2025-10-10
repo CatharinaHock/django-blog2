@@ -1,0 +1,36 @@
+{% extends "blog/base_with_banner.html" %}
+{% block content %}
+
+    <main class="container" style="margin-bottom: 100px;">
+            <h1 style="text-align:center; ">The sheep is okay</h1>
+            <h5 style="text-align:center;margin-bottom: 50px;">List of all comics</h5>
+        {% for comic in comics %}
+
+        <div class="row justify-content-center comic-row" >
+            <div class="col-2 comic-thumbnail-div", style="background-image: url({{comic.thumbnail_img.url}});">
+            </div>
+            <div class="col-3">
+                <h5><a href="{% url 'comic_detail' pk=comic.pk %}">Ep. {{comic.pk}}: {{ comic.title }}</a></h5>
+            </div>
+            <div class="col-2">
+                <time class="date-right">
+                    {% include './icons/calendar3.svg' %}
+                    {{ comic.published_date|date }}
+                </time>
+            </div>
+                    
+                    <!--<aside style="float:right;">
+                        <time class="date-right">
+                            {% include './icons/calendar3.svg' %}
+                            {{ comic.published_date|date }}
+                        </time>
+                        <a href="{% url 'comic_detail' pk=comic.pk %}" class="comment-number">{% include './icons/chat-dots-fill.svg' %} {{ comic.approved_comments.count }}</a>
+                    </aside>
+            </div>-->
+        </div>
+        {% endfor %}
+        <div style="text-align:center; margin-top:20px;">
+            <a  href="https://www.webtoons.com/en/canvas/the-sheep-is-okay/list?title_no=1094642">Now also on Webtoon!</a>
+        </div>
+    </main>
+{% endblock %}

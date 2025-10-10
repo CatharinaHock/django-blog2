@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post, Comment, Tag
+from .models import Post, Comment, Tag, Comic
 from django.utils import timezone
 from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
@@ -106,3 +106,28 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+
+
+def comic_detail(request, pk):
+    comic = get_object_or_404(Comic, pk=pk)
+    """
+    if request.method == "POST":
+        form  = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect("post_detail", pk = post.pk)
+    else:
+        form = CommentForm()
+     """
+    
+    previous_pk = max(pk-1,1) 
+    next_exists = Comic.objects.filter(pk=pk + 1).exists()
+    next_pk = pk + 1 if next_exists else pk
+
+    return render(request, "blog/comic_detail.html", {"comic":comic,"next_pk":next_pk, "previous_pk": previous_pk})# "form":form})
+
+def comic_list(request):
+    comics=Comic.objects.filter(published_date__lte=timezone.now()).order_by("-published_date")
+    return render(request, 'blog/comic_list.html', {"comics":comics})

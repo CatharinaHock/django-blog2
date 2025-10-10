@@ -1,0 +1,99 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<!--<header class="post-image-blurry" style="background-image: url({{post.main_img.url}}); filter: blur(10px) hue-rotate({{post.color_rotation}}deg);">
+</header>-->
+<main class="container">
+    
+    <!--<div class="row justify-content-center">
+        <div class="col">
+            <img class="post-image-sharp" src="{{ post.main_img.url}}", style="filter: hue-rotate({{post.color_rotation}}deg);">
+        </div>
+    </div>-->
+    
+    <div class="row justify-content-center">
+        <div class="col-8">
+            
+
+            <article class="post">
+                <!-- Editing options are removed-->
+                {% autoescape off %}
+                <h1 class="comic-title">{{ comic.title }}</h1>
+                {% if comic.published_date %}
+                    <time class="date-right date-up">
+                        
+                        {% include './icons/calendar3.svg' %}
+                        {{ comic.published_date|date }}
+                    </time>
+                {% endif %}
+                <!--Tags go here-->
+               
+                <div class="my-tooltip">
+                    <img class="comic-img" src="{{ comic.main_img.url}}">
+                    <!--{% if comic.mouseover_text %}
+                    <span class="my-tooltiptext">{{comic.mouseover_text}}</span>
+                    {% endif %}-->
+                </div>
+                <div class="button-box">
+                    <a class="btn comic-button" href="{% url 'comic_detail' pk=previous_pk%}">Previous</a>
+                    <a class="btn comic-button" href="{% url 'comic_detail' pk=next_pk%}">Next</a>
+                    </div>
+                <hr>
+                <p>{{ comic.mouseover_text|linebreaksbr|safe }}</p>
+
+                {% if comic.authors_comment %}
+                <div class="authors-comment-box">
+                    <button type="button" class="collapsible">Author's comment</button>
+                    <div class="content">
+                    <p>{{comic.authors_comment|linebreaksbr|safe}}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% endautoescape %}
+
+                
+            </article>
+            <!--
+            <hr>
+            <h1>Comments ({{ post.approved_comments.count }})</h1>
+            {% for comment in post.comments.all %}
+            {% if user.is_authenticated or comment.approved_comment %}
+            <div class="comment">
+                <div class="date-right">
+                    {% include './icons/calendar3.svg' %}
+                    {{ comment.created_date }}
+                    {% if not comment.approved_comment %}
+                        <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">
+                        {% include './icons/hand-thumbs-down.svg' %}
+                        </a>
+                        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">
+                        {% include './icons/hand-thumbs-up.svg' %}
+                        </a>
+                    {% endif %}
+                </div>
+                {% if comment.by_me %}
+                    <strong> {% include './icons/person-circle.svg' %}  {{ comment.author }} </strong> <span style="color:green; float:right;">{% include './icons/check-circle.svg' %}</span>
+                {% else %}
+                    <strong>{% include './icons/person-circle.svg' %} {{ comment.author }}</strong>
+                {% endif %}
+                <p>{{ comment.text|linebreaks }}</p>
+            </div>
+            {% endif %}
+        {% empty %}
+            <p>Be the first to comment!</p>
+        {% endfor %}
+            <div class="comment comment-form">
+                <h1>New comment</h1>
+                <form method="POST" class="post-form">{% csrf_token %}
+                    {{ form.as_p }}
+                <button type="submit" class="save btn btn-success">Send</button>
+            </form>
+            </div>-->
+        
+        </div>
+    </div>
+</main>
+
+    
+
+{% endblock %}

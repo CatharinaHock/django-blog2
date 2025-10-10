@@ -319,3 +319,99 @@ div .tagbox{
     padding: 10px;
     padding-left: 20px;
 }
+
+/* New stuff for comics */
+.comic-img{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+
+}
+.comic-title{
+    margin-bottom:0px;
+    margin-top:50px;
+}
+
+/* Mouse over text */
+.my-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+  }
+  
+.my-tooltip .my-tooltiptext {
+    visibility: hidden;
+    width: max-content;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    position: absolute;
+    z-index: 10;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none; /* prevents blocking hover */
+  }
+  
+.my-tooltip:hover .my-tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.my-tooltip img {
+    /*display: block;*/
+    pointer-events: auto; /* ensure the image responds to hover */
+  }
+
+.date-up{
+    margin-top: -30px;
+}
+
+.button-box{
+    display: flex;
+    justify-content: center;
+    margin-top:0px;
+}
+
+.comic-button{
+    margin-left:10px;
+    margin-right:10px;
+    background-color:#00916b;
+    border-color: #00916b;
+    width:100px;
+}
+
+.comic-button:hover,
+.comic-button:active,
+.comic-button:visited{
+    background-color:#00ca94;
+    border-color: #00ca94;
+}
+/* comic_list*/
+
+.comic-thumbnail-div{
+    /*text-align: right;*/
+    width: 100px;
+    height: 70px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgb(128, 126, 126);
+    /*border-color: rgb(128, 126, 126);
+    border-width: 1px;
+    border-style: solid;*/
+    
+    /*50px 20px;*//*75px 20px 20px 75px;*/
+}
+
+.comic-row{
+    margin-bottom: 0px;
+}
+
+
+/* Edit here */
