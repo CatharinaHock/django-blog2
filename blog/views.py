@@ -109,7 +109,7 @@ def comment_remove(request, pk):
 
 
 def comic_detail(request, pk):
-    comic = get_object_or_404(Comic, pk=pk)
+    comic = get_object_or_404(Comic, pk=pk, published_date__lte=timezone.now())
     """
     if request.method == "POST":
         form  = CommentForm(request.POST)
@@ -123,7 +123,7 @@ def comic_detail(request, pk):
      """
     
     previous_pk = max(pk-1,1) 
-    next_exists = Comic.objects.filter(pk=pk + 1).exists()
+    next_exists = Comic.objects.filter(pk=pk + 1,published_date__lte=timezone.now()).exists()
     next_pk = pk + 1 if next_exists else pk
 
     return render(request, "blog/comic_detail.html", {"comic":comic,"next_pk":next_pk, "previous_pk": previous_pk})# "form":form})
