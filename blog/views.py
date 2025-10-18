@@ -109,7 +109,11 @@ def comment_remove(request, pk):
 
 
 def comic_detail(request, pk):
-    comic = get_object_or_404(Comic, pk=pk, published_date__lte=timezone.now())
+    if request.user.is_authenticated:
+        comic = get_object_or_404(Comic, pk=pk)
+    else:
+        # Unauthenticated users can only see published comics
+        comic = get_object_or_404(Comic, pk=pk, published_date__lte=timezone.now())
     """
     if request.method == "POST":
         form  = CommentForm(request.POST)
